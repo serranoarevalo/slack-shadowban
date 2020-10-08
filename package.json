@@ -15,7 +15,8 @@
   },
   "homepage": "https://github.com/serranoarevalo/slack-shadowban#readme",
   "dependencies": {
-    "@slack/bolt": "^2.4.1"
+    "@slack/bolt": "^2.4.1",
+    "dotenv": "^8.2.0"
   },
   "scripts": {
     "start": "node main.js"

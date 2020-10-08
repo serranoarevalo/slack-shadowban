@@ -1,20 +1,35 @@
+require("dotenv").config();
 const { App } = require("@slack/bolt");
 
-const blacklist = [];
+const blacklist = ["U8LDEMDC6"];
 
 const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
   token: process.env.SLACK_BOT_TOKEN,
 });
 
-app.message(async ({ channel, user, ts }) => {
-  if (blacklist.includes(user)) {
-    await app.client.chat.delete({
-      ts,
-      channel,
-    });
+app.event(
+  "message",
+  async ({
+    body: {
+      event: { user, ts, channel },
+    },
+  }) => {
+    if (blacklist.includes(user)) {
+      try {
+        await app.client.chat.delete({
+          ts,
+          channel,
+          token: process.env.SLACK_USER_TOKEN,
+          text: "Nico so sexy!",
+          as_user: true,
+        });
+      } catch (e) {
+        console.log(e.data);
+      }
+    }
   }
-});
+);
 
 (async () => {
   // Start the app
