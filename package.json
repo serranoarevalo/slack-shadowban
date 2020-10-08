@@ -1,0 +1,23 @@
+{
+  "name": "slack-shadowban",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serranoarevalo/slack-shadowban.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serranoarevalo/slack-shadowban/issues"
+  },
+  "homepage": "https://github.com/serranoarevalo/slack-shadowban#readme",
+  "dependencies": {
+    "@slack/bolt": "^2.4.1"
+  },
+  "scripts": {
+    "start": "node main.js"
+  }
+}
