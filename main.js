@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { App } = require("@slack/bolt");
 
-const blacklist = ["U8LDEMDC6"];
+const blacklist = [<USER_ID>, <USER_ID>];
 
 const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
@@ -21,7 +21,6 @@ app.event(
           ts,
           channel,
           token: process.env.SLACK_USER_TOKEN,
-          text: "Nico so sexy!",
           as_user: true,
         });
       } catch (e) {
